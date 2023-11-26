@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Md
   m_EditorClassIdentifier: 
   material: {fileID: 0}
-  size: 0
-  daysName: []
-  offset: 0
+  size: 7
+  daysName:
+  - lu
+  - ma
+  - mi
+  - jo
+  - vi
+  - sa
+  - du
+  offset: 2
