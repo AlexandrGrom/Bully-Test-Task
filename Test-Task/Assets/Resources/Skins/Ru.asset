@@ -10,16 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ce10ea0d3e81b145baa835d18dc1118, type: 3}
-  m_Name: Skins
+  m_Name: Ru
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 6fdf7530e531b3f4693c8b186228df27, type: 2}
-  size: 7
-  daysName:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  material: {fileID: 0}
+  size: 0
+  daysName: []
   offset: 0
