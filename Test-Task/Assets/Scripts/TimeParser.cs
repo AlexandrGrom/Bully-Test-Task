@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class TimeParser : MonoBehaviour
@@ -6,11 +7,14 @@ public class TimeParser : MonoBehaviour
     [SerializeField] private Transform arrowH;
     [SerializeField] private Transform arrowM;
     [SerializeField] private Transform arrowS;
+    [SerializeField] private TextMeshPro week;
     
     
     private void Update()
     {
         DateTime gmtTime = DateTime.UtcNow;
+        week.text = ((int)gmtTime.DayOfWeek).ToString();
+
 
         float rotationAngleXHour = -gmtTime.Hour % 12 * (360f / 12f);
         float rotationAngleXMinute = -gmtTime.Minute * (360f / 60f);
