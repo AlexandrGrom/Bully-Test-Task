@@ -17,6 +17,13 @@ namespace UI
             string timestamp = System.DateTime.Now.ToString("yyyyMMddHHmmss");
             string fileName = "Screenshot_" + timestamp + ".png";
             ScreenCapture.CaptureScreenshot(fileName);
+
+#if PLATFORM_ANDROID
+            string filePath = Application.persistentDataPath + "/" + fileName;
+            string destinationPath = "/sdcard/Download/" + fileName;
+            
+            System.IO.File.Move(filePath, destinationPath);
+#endif
         }
     }
 }
