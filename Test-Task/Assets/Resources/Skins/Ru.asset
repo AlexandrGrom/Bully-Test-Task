@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce10ea0d3e81b145baa835d18dc1118, type: 3}
   m_Name: Ru
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: b7b734ba6751bc4438323c19aa013943, type: 2}
   size: 7
   daysName:
   - "\u043F\u043D"

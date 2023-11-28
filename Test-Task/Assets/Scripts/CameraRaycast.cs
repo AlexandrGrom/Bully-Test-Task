@@ -1,4 +1,5 @@
 using System;
+using Clickable;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
@@ -13,16 +14,15 @@ public class CameraRaycast : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        if (!Input.GetMouseButtonDown(0)) return;
         
-            if (Physics.Raycast(ray, out var hit)) 
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(ray, out var hit)) 
+        {
+            if (hit.collider.TryGetComponent(out IClickable clickable))
             {
-                if (hit.collider.TryGetComponent(out IClickable clickable))
-                {
-                    clickable.Click();
-                }
+                clickable.Click();
             }
         }
     }
