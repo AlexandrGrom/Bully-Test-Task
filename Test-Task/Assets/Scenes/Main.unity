@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 455579782}
   - component: {fileID: 455579781}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,54 +788,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469557579}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &500955316
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 500955317}
-  - component: {fileID: 500955318}
-  m_Layer: 0
-  m_Name: Pivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &500955317
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500955316}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.1, y: 0.3, z: -0.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 803684140}
-  m_Father: {fileID: 925201452}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &500955318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500955316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af447de925f8b044183161792722413a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotatingSpeed: 50
-  floatingSpeed: 3
-  floatingRange: 0.1
 --- !u!1 &546090416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1023,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678764433}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -1228,6 +1180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 803684140}
   - component: {fileID: 803684142}
+  - component: {fileID: 803684143}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -1242,8 +1195,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803684139}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.1, y: 0.3, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1251,7 +1204,7 @@ Transform:
   - {fileID: 1812381871}
   - {fileID: 148349245}
   - {fileID: 1182967811}
-  m_Father: {fileID: 500955317}
+  m_Father: {fileID: 925201452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &803684142
@@ -1270,7 +1223,24 @@ MonoBehaviour:
   arrowM: {fileID: 458517963}
   arrowS: {fileID: 1991979427}
   week: {fileID: 1057964481}
-  arrowMesh: {fileID: 455579781}
+  arrowMesh:
+  - {fileID: 455579781}
+  - {fileID: 1157528726}
+--- !u!114 &803684143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803684139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af447de925f8b044183161792722413a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatingSpeed: 50
+  floatingSpeed: 3
+  floatingRange: 0.1
 --- !u!1 &909179280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 500955317}
+  - {fileID: 803684140}
   - {fileID: 1249815768}
   - {fileID: 1932320916}
   - {fileID: 414283067}
@@ -1742,9 +1712,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157528723}
-  m_LocalRotation: {x: 0.67909884, y: -0.67909914, z: 0.19703948, w: 0.19703954}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.015, y: 0, z: 0}
-  m_LocalScale: {x: 0.03999999, y: 0.039999995, z: 0.03999999}
+  m_LocalScale: {x: 0.04, y: 0.039999995, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1991979427}
@@ -1917,7 +1887,7 @@ GameObject:
   - component: {fileID: 1298114736}
   - component: {fileID: 1298114735}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2166,7 +2136,7 @@ GameObject:
   - component: {fileID: 1443728655}
   - component: {fileID: 1443728654}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

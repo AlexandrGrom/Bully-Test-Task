@@ -6,7 +6,7 @@ namespace Clickable
     public class NextSkinButton : MonoBehaviour, IClickable
     {
         [SerializeField] private int incrementedValue;
-        [SerializeField] private AudioSource audio;
+        [SerializeField] private new AudioSource audio;
     
         public void Click()
         {

@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace Skins.Editor
 {
     [CustomEditor(typeof(Skin))]
     public class SkinEditor : UnityEditor.Editor

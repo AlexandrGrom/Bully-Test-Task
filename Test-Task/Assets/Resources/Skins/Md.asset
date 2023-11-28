@@ -15,11 +15,11 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 135af6fa13e9dc74cab7ed098d904c2b, type: 2}
   size: 7
   daysName:
+  - du
   - lu
   - ma
   - mi
   - jo
   - vi
   - sa
-  - du
   offset: 2

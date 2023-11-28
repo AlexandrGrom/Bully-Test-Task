@@ -15,11 +15,11 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 6fdf7530e531b3f4693c8b186228df27, type: 2}
   size: 7
   daysName:
+  - Sun
   - Mon
   - Tues
   - Wed
   - Thurs
   - Fri
   - Sat
-  - Sun
   offset: 0
