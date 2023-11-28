@@ -7,24 +7,31 @@ namespace Editor
     public class SkinEditor : UnityEditor.Editor
     {
         private bool dropdown;
+        
+        SerializedProperty offsetProp;
+        SerializedProperty materialProp;
         SerializedProperty stringArrayProp;
         SerializedProperty arrayLengthProp;
 
+
         void OnEnable()
         {
-            stringArrayProp = serializedObject.FindProperty("daysName");
+            materialProp = serializedObject.FindProperty("material");
             arrayLengthProp = serializedObject.FindProperty("size");
+            stringArrayProp = serializedObject.FindProperty("daysName");
+            offsetProp = serializedObject.FindProperty("offset");
+
         }
         
         public override void OnInspectorGUI()
         {
-            Skin skin = (Skin)target;
             EditorGUILayout.LabelField("Skin Setup", EditorStyles.boldLabel);
             DrawUILine(Color.gray, 1, 2);
 
             EditorGUI.indentLevel++;
             
-            skin.material = (Material)EditorGUILayout.ObjectField("Sec Hand Material", skin.material, typeof(Material), false);
+            EditorGUILayout.PropertyField(materialProp, new GUIContent("Sec Hand Material"));
+
             GUILayout.Space(10);
 
             dropdown = EditorGUILayout.Foldout(dropdown, "Day Names");
@@ -44,7 +51,10 @@ namespace Editor
             
             GUILayout.Space(10);
 
-            skin.offset = EditorGUILayout.IntSlider(new GUIContent("Offset", "Description of Offset"), skin.offset, -12, 12);
+            EditorGUILayout.IntSlider(offsetProp, -12, 12, new GUIContent("Offset"));
+
+            //EditorGUILayout.PropertyField(offsetProp, new GUIContent("Sec Hand Material"));
+            
             EditorGUI.indentLevel--;
             
             GUILayout.Space(20);
@@ -53,6 +63,7 @@ namespace Editor
             {
                 EditorGUILayout.HelpBox($"Week must have 7 days, you have {arrayLengthProp.intValue}", MessageType.Error);
             }
+            
             serializedObject.ApplyModifiedProperties();
         }
         
