@@ -14,7 +14,12 @@ namespace Clickable
             poolableObject.transform.position = transform.position;
 
             ((MetallicSphere)poolableObject).Reinitialize();
-            ((MetallicSphere)poolableObject).AddForce((transform.up * upForce) + Random.insideUnitSphere * sphereForce);
+            
+            Vector3 sphere = Random.insideUnitSphere;
+            sphere.y = 0;
+            sphere = sphere.normalized;
+            Vector3 localUp = transform.TransformDirection(new Vector3(0, 1, 0));
+            ((MetallicSphere)poolableObject).AddForce(localUp * upForce + sphere * sphereForce);
         }
     }
 }
